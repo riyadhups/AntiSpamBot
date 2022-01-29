@@ -51,7 +51,7 @@ async def check(client, message: Message):
     if Userge: strop += f"\n\n{Userge}"
     if IntelliVoid: strop += f"\n\n{IntelliVoid}"
     if not (SpamWatch or Combot or Userge or IntelliVoid):
-        strop += "\nClean User. Checked With:"
+        strop += "\nClean User.\n\nChecked With:"
         if Config.SPAMWATCH_ANTISPAM_API: strop += "\nSpamWatch"
         if Config.COMBOT_CAS_ANTISPAM: strop += "\nCombot"
         if Config.USERGE_ANTISPAM_API: strop += "\nUserge"
