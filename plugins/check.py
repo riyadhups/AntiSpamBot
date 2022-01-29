@@ -4,7 +4,6 @@ from pyrogram import Client, filters
 from pyrogram.types.messages_and_media.message import Message
 import logging
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from HelperFunc.authUserCheck import AuthUserCheck
 from HelperFunc.message import sendMessage
 from HelperFunc.spamMotors import CombotAntiSpamCheck, IntelliVoidSpamCheck, SpamWatchAntiSpamCheck, UsergeAntiSpamCheck
