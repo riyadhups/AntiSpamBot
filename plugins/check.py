@@ -26,7 +26,7 @@ async def check(client, message: Message):
         if userid != Config.OWNER_ID: return LOGGER.info("Checking only for Owner.")
     url = None
     helpstr = f"Send like: /{Config.CHECK_COMMAND[0]} 515151521"
-    helpstr += f"\nFor check yourself, send: /{Config.CHECK_COMMAND[0]} {str(userid)}"
+    helpstr += f"\nFor check yourself, send: <code>/{Config.CHECK_COMMAND[0]} {str(userid)}</code>"
     if not message.reply_to_message:
         url = message.text.split(' ', 1)
         try: url = url[1]
@@ -45,7 +45,7 @@ async def check(client, message: Message):
     if Config.COMBOT_CAS_ANTISPAM: Combot = CombotAntiSpamCheck(userid)
     if Config.USERGE_ANTISPAM_API: Userge = UsergeAntiSpamCheck(userid)
     if Config.INTELLIVOID_ANTISPAM: IntelliVoid = IntelliVoidSpamCheck(userid)
-    strop = f"{tumad} ({str(userid)}) Check Results:"
+    strop = f"User: {tumad} ({str(userid)})\nCheck Results:"
     if SpamWatch: strop += f"\n\n{SpamWatch}"
     if Combot: strop += f"\n\n{Combot}"
     if Userge: strop += f"\n\n{Userge}"
