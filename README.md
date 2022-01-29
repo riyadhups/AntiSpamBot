@@ -41,9 +41,9 @@
 <b>Other Variables:</b>
 
 - `OWNER_ID`: Bot's owner id. Send `/id` to `t.me/MissRose_bot` in private to get your id Required for logs. If you don't want, leave it empty
-- `BAN_ALL_NEWCOMERS`: Set `True` if you dont want users in your group anymore
-- `COMBOT_CAS_ANTISPAM`: Set `True` if you dont want
-- `INTELLIVOID_ANTISPAM`: Set `True` if you dont want. AI Detection
+- `BAN_ALL_NEWCOMERS`: Set `True` if you dont want users in your group anymore. Default `False`
+- `COMBOT_CAS_ANTISPAM`: Set `True` if you want. Default `False`
+- `INTELLIVOID_ANTISPAM`: Set `True` if you want. AI Detection. Default `False`
 - `SPAMWATCH_ANTISPAM_API`: Give Api ID. Get it from `@SpamWatchBot` in telegram
 - `USERGE_ANTISPAM_API`: Give Api ID. Get it from `@UsergeAntispamBot` in telegram
 - `SILENT_BAN`: Set `True` if you dont want bot inform you about bans. Default `False`
