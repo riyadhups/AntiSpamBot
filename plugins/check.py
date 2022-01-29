@@ -36,7 +36,7 @@ async def check(client, message: Message):
     except:
         helpstr += "\nOnly send user id. Integer. Like 515187151"
         return await sendMessage(message, helpstr)
-    tumad = message.from_user.mention()
+    tumad = f"<a href='tg://user?id={userid}'>({str(userid)})</a>"
     SpamWatch = None
     Combot = None
     Userge = None
