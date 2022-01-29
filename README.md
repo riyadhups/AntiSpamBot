@@ -49,6 +49,7 @@
 - `SILENT_BAN`: Set `True` if you dont want bot inform you about bans. Default `False`
 - `USER_CLEAN_MESSAGE`: Set `True` if you want bot inform you about clean users. Default `False`
 - `AUTO_DEL_SEC`: Set `3` if you want delete bot's banned message after 3 secs. Give `0` for no delete. Default `0`
+- `CHECK_ALLOWED` Who can check user ban? `auths` or `public` or `disabled` or `owner` Default `owner`
 
 </details>
 

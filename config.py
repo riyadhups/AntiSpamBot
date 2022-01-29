@@ -19,7 +19,18 @@ class Config(object):
     AUTH_IDS.append(OWNER_ID)
     LOG_COMMAND = os.environ.get('LOG_COMMAND','log')
     LOG_COMMAND = [LOG_COMMAND, LOG_COMMAND+BOT_USERNAME] # bu satıra dokunmayın.
+    CHECK_COMMAND = os.environ.get('CHECK_COMMAND','check')
+    CHECK_COMMAND = [CHECK_COMMAND, CHECK_COMMAND+BOT_USERNAME] # bu satıra dokunmayın.
 
+    CHECK_ALLOWED = os.environ.get('CHECK_ALLOWED', 'owner').lower()
+    if CHECK_ALLOWED != 'auths' or CHECK_ALLOWED != 'public' \
+        or CHECK_ALLOWED != 'disabled' or CHECK_ALLOWED != 'owner':
+        CHECK_ALLOWED = 'owner'
+    if CHECK_ALLOWED == 'disabled': CHECK_ALLOWED = None
+    if CHECK_ALLOWED == 'owner' and OWNER_ID == 0:
+        LOGGER.error("Set OWNER_ID to use check command.")
+        exit(1)
+    LOGGER.info(f"CHECK_ALLOWED = {str(CHECK_ALLOWED)}")
     # spam protections +
     
     BAN_ALL_NEWCOMERS =  os.environ.get('BAN_ALL_NEWCOMERS','False').lower() == 'true'
