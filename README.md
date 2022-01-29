@@ -19,7 +19,7 @@
 [![](https://img.shields.io/badge/ha-telegram-blue?style=flat&style=flat&logo=telegram)](https://t.me/HuzunluArtemis)
 [![](https://img.shields.io/badge/website-up-blue?style=flat&logo=appveyor&style=flat&logo=twitter)](https://huzunluartemis.github.io/)
 
-## WaybackBot:
+## AntiSpamBot:
 
 🇬🇧 Anti spam bot with 5 different protection options
 
