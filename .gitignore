@@ -1,0 +1,10 @@
+config.env
+*.pyc
+data*
+.vscode
+.idea
+.netrc
+log.txt
+cookies.txt
+__pycache__
+test.py
