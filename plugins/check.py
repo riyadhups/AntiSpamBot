@@ -4,7 +4,6 @@ from pyrogram import Client, filters
 from pyrogram.types.messages_and_media.message import Message
 import logging
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from HelperFunc.authUserCheck import AuthUserCheck
 from HelperFunc.message import sendMessage
 from HelperFunc.spamMotors import CombotAntiSpamCheck, IntelliVoidSpamCheck, SpamWatchAntiSpamCheck, UsergeAntiSpamCheck
@@ -27,7 +26,7 @@ async def check(client, message: Message):
         if userid != Config.OWNER_ID: return LOGGER.info("Checking only for Owner.")
     url = None
     helpstr = f"Send like: /{Config.CHECK_COMMAND[0]} 515151521"
-    helpstr += f"\nFor check yourself, send: /{Config.CHECK_COMMAND[0]} {str(userid)}"
+    helpstr += f"\nFor check yourself, send: <code>/{Config.CHECK_COMMAND[0]} {str(userid)}</code>"
     if not message.reply_to_message:
         url = message.text.split(' ', 1)
         try: url = url[1]
@@ -37,7 +36,7 @@ async def check(client, message: Message):
     except:
         helpstr += "\nOnly send user id. Integer. Like 515187151"
         return await sendMessage(message, helpstr)
-    tumad = message.from_user.mention()
+    tumad = f"<a href='tg://user?id={userid}'>({str(userid)})</a>"
     SpamWatch = None
     Combot = None
     Userge = None
@@ -46,13 +45,13 @@ async def check(client, message: Message):
     if Config.COMBOT_CAS_ANTISPAM: Combot = CombotAntiSpamCheck(userid)
     if Config.USERGE_ANTISPAM_API: Userge = UsergeAntiSpamCheck(userid)
     if Config.INTELLIVOID_ANTISPAM: IntelliVoid = IntelliVoidSpamCheck(userid)
-    strop = f"{tumad} ({str(userid)}) Check Results:"
+    strop = f"User: {tumad} ({str(userid)})\nCheck Results:"
     if SpamWatch: strop += f"\n\n{SpamWatch}"
     if Combot: strop += f"\n\n{Combot}"
     if Userge: strop += f"\n\n{Userge}"
     if IntelliVoid: strop += f"\n\n{IntelliVoid}"
     if not (SpamWatch or Combot or Userge or IntelliVoid):
-        strop += "\nClean User. Checked With:"
+        strop += "\nClean User.\n\nChecked With:"
         if Config.SPAMWATCH_ANTISPAM_API: strop += "\nSpamWatch"
         if Config.COMBOT_CAS_ANTISPAM: strop += "\nCombot"
         if Config.USERGE_ANTISPAM_API: strop += "\nUserge"
