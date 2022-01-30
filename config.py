@@ -31,6 +31,7 @@ class Config(object):
         LOGGER.error("Set OWNER_ID to use check command.")
         exit(1)
     LOGGER.info(f"CHECK_ALLOWED = {str(CHECK_ALLOWED)}")
+
     # spam protections +
     
     BAN_ALL_NEWCOMERS =  os.environ.get('BAN_ALL_NEWCOMERS','False').lower() == 'true'
@@ -45,13 +46,18 @@ class Config(object):
     USERGE_ANTISPAM_API = os.environ.get('USERGE_ANTISPAM_API','')
     if len(USERGE_ANTISPAM_API) < 2: USERGE_ANTISPAM_API = None
 
+    # spam protections -
+
+    # ban settings +
+
     SILENT_BAN =  os.environ.get('SILENT_BAN','False').lower() == 'true'
+    DONT_BAN =  os.environ.get('DONT_BAN','False').lower() == 'true'
     USER_CLEAN_MESSAGE =  os.environ.get('USER_CLEAN_MESSAGE','False').lower() == 'true'
     try: AUTO_DEL_SEC =  int(os.environ.get('AUTO_DEL_SEC','0'))
     except: AUTO_DEL_SEC = 0
     if AUTO_DEL_SEC == 0: AUTO_DEL_SEC = None
 
-    # spam protections -
+    # ban settings -
 
     if not (SPAMWATCH_ANTISPAM_API or COMBOT_CAS_ANTISPAM or USERGE_ANTISPAM_API or INTELLIVOID_ANTISPAM):
         LOGGER.error("no spam protection. enable one or more.")

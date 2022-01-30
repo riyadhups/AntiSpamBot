@@ -49,9 +49,13 @@ async def antiSpam(client: Client, message: Message):
             if not Config.USER_CLEAN_MESSAGE: return LOGGER.info(uclean)
             else: mesg = await sendMessage(message, uclean)
         else:
+            success = None
             try:
-                await client.ban_chat_member(chatid, p.id)
-                success = "Success"
+                if not Config.DONT_BAN:
+                    await client.ban_chat_member(chatid, p.id)
+                    success = "Success"
+                else:
+                    success = "Banning Disabled"
             except Exception as o:
                 success = "Unsuccess"
                 LOGGER.error(o)

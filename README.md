@@ -50,12 +50,41 @@
 - `USER_CLEAN_MESSAGE`: Set `True` if you want bot inform you about clean users. Default `False`
 - `AUTO_DEL_SEC`: Set `3` if you want delete bot's banned message after 3 secs. Give `0` for no delete. Default `0`
 - `CHECK_ALLOWED` Who can check user ban? `auths` or `public` or `disabled` or `owner` Default `owner`
+- `DONT_BAN` Do not ban. Only show if there is a reason for ban. Default `False`
+
+</details>
+
+## Deploy
+<details>
+  <summary><b>🇬🇧 Click Here 🇹🇷 Buraya Tıkla</b></summary><br>
+
+<b>Deploy to Heroku:</b>
+
+- [Open me in new tab](https://heroku.com/deploy?template=https://github.com/HuzunluArtemis/AntiSpamBot)
+- Fill required variables
+- Fill app name (or dismiss)
+
+<b>Deploy to Local:</b>
+
+- install [python](https://www.python.org/downloads/) to your machine
+- `git clone https://github.com/HuzunluArtemis/AntiSpamBot`
+- `cd AntiSpamBot`
+- `pip install -r requirements.txt`
+- `python bot.py`
+
+<b>Deploy to Vps:</b>
+
+- `git clone https://github.com/HuzunluArtemis/AntiSpamBot`
+- `cd AntiSpamBot`
+- For Debian based distros `sudo apt install python3 && sudo snap install docker`
+- For Arch and it's derivatives: `sudo pacman -S docker python`
 
 </details>
 
 ## License
 <details>
-    <summary><b>🇬🇧 Click Here 🇹🇷 Buraya Tıkla</b></summary><br>
+    <summary><b>🇬🇧 Click Here 🇹🇷 Buraya Tıkla</b></summary>
+  <br>
   <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
   <img src="https://www.gnu.org/graphics/gplv3-127x51.png" alt="GNU GPLv3 Image">
 </a>
