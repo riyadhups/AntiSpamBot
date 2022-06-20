@@ -20,7 +20,7 @@ LOGGER = logging.getLogger(__name__)
 async def help(client, message: Message):
 	if not await AuthUserCheck(message): return
 	tumad = message.from_user.mention()
-	sampleText = f"<a href='https://github.com/HuzunluArtemis/AntiSpamBot'>🍁</a> Esenlikler / Hi {tumad}\n\n"
+	sampleText = f"<a href='https://github.com/riyadhups/AntiSpamBot'>🍁</a> Esenlikler / Hi {tumad}\n\n"
 	sampleText += "I can fight with spam with power of:"
 	sampleText += "\n- SpamWatch AntiSpam"
 	sampleText += "\n- Combot AntiSpam (CAS)"
