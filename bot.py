@@ -52,7 +52,7 @@ class Bot(Client):
         if Config.OWNER_ID != 0:
             try:
                 await self.send_message(
-                    text= "🇬🇧 i reborn from the ashes of darkness\n🇹🇷 karanlığın küllerinden yeniden doğdum",
+                    text= "🇬🇧 i reborn from the ashes of darkness\n🇦🇿 qaranlığın küllərindən yenidən yarandım",
                     chat_id=Config.OWNER_ID)
             except Exception as t:
                 LOGGER.error(str(t))
@@ -60,7 +60,7 @@ class Bot(Client):
     async def stop(self, *args):
         if Config.OWNER_ID != 0:
             texto = f"🇬🇧 I took my last breath.\nthe age i died: {ReadableTime(time.time() - Config.botStartTime)}" + \
-                    f"\n\n🇹🇷 son nefesimi verdim.\nöldüğümde yaşım: {ReadableTime(time.time() - Config.botStartTime)}"
+                    f"\n\n🇦🇿 son nəfəsimi verdim.\nöləndə yaşım: {ReadableTime(time.time() - Config.botStartTime)}"
             try:
                 await self.send_message(text= texto,chat_id=Config.OWNER_ID)
             except Exception as t:
